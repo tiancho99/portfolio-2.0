@@ -1,0 +1,52 @@
+.component {
+    padding: 2rem 4rem;
+}
+.banner {
+    padding: 0;
+}
+
+.banner__text {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.9248074229691877) 50%, rgba(255,255,255,0) 100%);
+    height: 70vh;
+    width: 60%;
+}
+
+.banner__img {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+}
+
+.banner__img img {
+    margin: 0;
+    padding: 0;
+    height: 70vh;
+    width: 100%;
+    object-fit: cover;
+    padding-right: 0;
+    max-width: 100%;
+
+}
+
+.aboutme__subtitle, .projects__subtitle, .blog__subtitle{
+    color: green;
+}
+
+.aboutme, .blog {
+    background-color: white;
+}
+
+.projects {
+    background-color: #eef1ef;
+}
+
+.form__star--required {
+    color: #ed656c;
+}
+
+.footer {
+    background-color: #080a0b;
+    color: white;
+}
+
