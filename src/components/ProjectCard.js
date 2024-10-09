@@ -10,7 +10,7 @@ const ProjectCard = ({ project }) => {
                 <Card.Text>
                     {project.excerpt.rendered.replace("<p>", "").replace("</p>","")}
                 </Card.Text>
-                <a href={project["_links"].self[0].href} className="btn btn-primary" role="button">Go to project</a>
+                <a href={`/${project.slug}`} className="btn btn-primary" role="button">Go to project</a>
             </Card.Body>
         </Card>
     );

@@ -1,35 +1,15 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button'
 
+import MyNavbar from '../components/MyNavbar.js'
 import banner from '../assets/banner.jpg'
-import { useState } from "react";
     
 const Header = () => {
-    const [collapsed, setCollapsed] = useState(true);
-
-    const handleToggle = () => {
-        setCollapsed(!collapsed);
-    }
-
     return(
         <header>
-             <Navbar expand="lg" className="bg-body-tertiary" onToggle={handleToggle}>
-                <Container className="open-sans-normal">
-                    <Navbar.Brand href="#home" className={`navbar-brand fw-bolder`}>&gt;_ Sebastian Hernandez</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" className="border-0 ms-auto" />
-                    <Navbar.Collapse id="basic-navbar-nav" className="">
-                      <Nav className="me-auto">
-                        <Nav.Link href="#aboutme" className="text-center">About me</Nav.Link>
-                        <Nav.Link href="#projects" className="text-center">Projects</Nav.Link>
-                        <Nav.Link href="#blog" className="text-center">Blog</Nav.Link>
-                      </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
+            <MyNavbar />
             <Container fluid className="pe-0">
                 <Row className="banner component">
                     <Col className="banner__text align-content-center component">
