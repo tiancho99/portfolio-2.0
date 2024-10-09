@@ -20,14 +20,16 @@ const Projects = ({ prefix, subtitle, title, categories}) => {
             );
         }
         return (
-            <Container fluid>
-                <section className={prefix}>
-                    <h6 className={`${prefix}__subtitle`}>{subtitle}</h6>
-                    <h2 className={`${prefix}__title`}>{title}</h2>
-                    <Row>
-                            {cardPlaceholders.map( placeholder => placeholder )}   
-                    </Row>
-                </section>
+            <Container id="blog" fluid>
+                <Row className={`${prefix} component`}>
+                    <section>
+                        <h6 className={`${prefix}__subtitle`}>{subtitle}</h6>
+                        <h2 className={`${prefix}__title`}>{title}</h2>
+                        <Row>
+                                {cardPlaceholders.map( placeholder => placeholder )}   
+                        </Row>
+                    </section>
+                </Row>
             </Container>
         )
     }
@@ -35,20 +37,21 @@ const Projects = ({ prefix, subtitle, title, categories}) => {
     if (error) return <div>Erorr: {error} </div>;
 
     return (
-
-        <Row className={`component ${prefix}`}>
-            <section className={prefix}>
-                <h6 className={`${prefix}__subtitle`}>{subtitle}</h6>
-                <h2 className={`${prefix}__title`}>{title}</h2>
-                <Row>
-                {Object.values(posts || {}).map((project) => (
-                    <Col key={project.id} xs={12} className="my-3">
-                        <BlogCard project={project}/>
-                    </Col>
-                ))}        
-                </Row>
-            </section>
-        </Row>
+        <Container id="blog" fluid>
+            <Row className={`${prefix} component`}>
+                <section>
+                    <h6 className={`${prefix}__subtitle`}>{subtitle}</h6>
+                    <h2 className={`${prefix}__title`}>{title}</h2>
+                    <Row>
+                    {Object.values(posts || {}).map((project) => (
+                        <Col key={project.id} xs={12} className="my-3">
+                            <BlogCard project={project}/>
+                        </Col>
+                    ))}        
+                    </Row>
+                </section>
+            </Row>
+        </Container>
     );
 }
 

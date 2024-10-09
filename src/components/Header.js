@@ -23,24 +23,23 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" className="border-0 ms-auto" />
                     <Navbar.Collapse id="basic-navbar-nav" className="">
                       <Nav className="me-auto">
-                        <Nav.Link href="#home" className="text-center">Home</Nav.Link>
-                        <Nav.Link href="#link" className="text-center">Link</Nav.Link>
+                        <Nav.Link href="#aboutme" className="text-center">About me</Nav.Link>
+                        <Nav.Link href="#projects" className="text-center">Projects</Nav.Link>
+                        <Nav.Link href="#blog" className="text-center">Blog</Nav.Link>
                       </Nav>
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
-            <Row className="banner">
-            <Col className="component position-absolute banner__text" xs={7}>
-               <h2 className="open-sans-bold">Sebastian Hernandez<br/>Backend Developer</h2> 
-                    <p>Python enthusiast mastering artificial intelligence.</p>
-                <div>
-                <Button variant="success">View projects</Button>{' '}
-                </div>
-            </Col>
-            <Col className="banner__img" xs={12}>
-                <img src={banner}/>
-            </Col>
-            </Row>
+            <Container fluid className="pe-0">
+                <Row className="banner component">
+                    <Col className="banner__text align-content-center component">
+                       <h2 className="open-sans-bold">Sebastian Hernandez<br/>Backend Developer</h2> 
+                            <p>Python enthusiast mastering artificial intelligence.</p>
+                        <Button variant="success">View projects</Button>
+                    </Col>
+                    <img className="banner__img" src={banner} alt="banner__image"/>
+                </Row>
+            </Container>
         </header>
 
 

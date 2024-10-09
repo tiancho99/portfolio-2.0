@@ -1,5 +1,4 @@
 import Card from "react-bootstrap/Card"
-import Button from 'react-bootstrap/Button'
 
 
 const ProjectCard = ({ project }) => {
@@ -11,7 +10,7 @@ const ProjectCard = ({ project }) => {
                 <Card.Text>
                     {project.excerpt.rendered.replace("<p>", "").replace("</p>","")}
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <a href={project["_links"].self[0].href} className="btn btn-primary" role="button">Go to project</a>
             </Card.Body>
         </Card>
     );
