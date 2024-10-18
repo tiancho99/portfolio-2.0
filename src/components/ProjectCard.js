@@ -1,16 +1,23 @@
 import Card from "react-bootstrap/Card"
 
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ post }) => {
     return (
         <Card className="border-0 rounded-0"  style={{width: '100%'}}>
-            <Card.Img className="rounded-0" variant="top" src={project.project_thumbnail || ""}/>
+            <Card.Img
+                className="projects__thumbnail rounded-0"
+                variant="top"
+                src={post.project_thumbnail}
+            />
             <Card.Body>
-                <Card.Title>{project.title.rendered}</Card.Title>
-                <Card.Text>
-                    {project.excerpt.rendered.replace("<p>", "").replace("</p>","")}
+                <Card.Title>{post.title.rendered}</Card.Title>
+                <Card.Text dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}>
                 </Card.Text>
-                <a href={`/${project.slug}`} className="btn btn-primary" role="button">Go to project</a>
+                <a
+                    href={`/post/${post.id}`}
+                    className="btn btn-primary"
+                    role="button"
+                >Go to project</a>
             </Card.Body>
         </Card>
     );

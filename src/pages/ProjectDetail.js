@@ -1,15 +1,25 @@
+import Container from 'react-bootstrap/Container'
 import MyNavbar from '../components/MyNavbar.js';
 import { useParams } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import useFetchDetails from '../hooks/useFetchDetails.js'
 
 
 const ProjectDetail = () => {
-    const slug = useParams();
+    const { postId }= useParams();
 
-    const { detail, loading, error } = useFetchDetails(slug)
+    const { detail, loading, error } = useFetchDetails(postId);
+
+    if(loading) return <div>Loading</div>
+    if(error) return <div>Error</div>
     return (
-        <MyNavbar/>
+        <Container className="post">
+            <h1 className="post__title">{detail.title.rendered}</h1>
+            <div className="post__content"
+                dangerouslySetInnerHTML={{__html: detail.content.rendered}}
+            >
+            </div>
+                
+        </Container>
     );
 }
 

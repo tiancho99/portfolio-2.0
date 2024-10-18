@@ -1,0 +1,48 @@
+/* Error: Undefined mixin.
+ *    ,
+ * 26 | /     @include media-breakpoint-up(sm) {
+ * 27 | |       background: red;
+ * 28 | |       background: rgb(255, 255, 255);
+ * 29 | |       background: -moz-linear-gradient(
+ * 30 | |         90deg,
+ * 31 | |         rgba(255, 255, 255, 1) 0%,
+ * 32 | |         rgba(255, 255, 255, 1) 37%,
+ * 33 | |         rgba(255, 255, 255, 0.92) 59%,
+ * 34 | |         rgba(255, 255, 255, 0.5) 84%,
+ * 35 | |         rgba(255, 255, 255, 0) 100%
+ * 36 | |       );
+ * 37 | |       background: -webkit-linear-gradient(
+ * 38 | |         90deg,
+ * 39 | |         rgba(255, 255, 255, 1) 0%,
+ * 40 | |         rgba(255, 255, 255, 1) 37%,
+ * 41 | |         rgba(255, 255, 255, 0.92) 59%,
+ * 42 | |         rgba(255, 255, 255, 0.5) 84%,
+ * 43 | |         rgba(255, 255, 255, 0) 100%
+ * 44 | |       );
+ * 45 | |       background: linear-gradient(
+ * 46 | |         90deg,
+ * 47 | |         rgba(255, 255, 255, 1) 0%,
+ * 48 | |         rgba(255, 255, 255, 1) 37%,
+ * 49 | |         rgba(255, 255, 255, 0.92) 59%,
+ * 50 | |         rgba(255, 255, 255, 0.5) 84%,
+ * 51 | |         rgba(255, 255, 255, 0) 100%
+ * 52 | |       );
+ * 53 | |       filter: progid:DXImageTransform.Microsoft.gradient(
+ * 54 | |         startColorstr="#ffffff",
+ * 55 | |         endColorstr="#ffffff",
+ * 56 | |         GradientType=1
+ * 57 | |       );
+ * 58 | \     }
+ *    '
+ *   src/styles/sass/App.scss 26:5  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: Undefined mixin.\a    \2577 \a 26 \2502  \250c      @include media-breakpoint-up(sm) {\a 27 \2502  \2502        background: red;\a 28 \2502  \2502        background: rgb(255, 255, 255);\a 29 \2502  \2502        background: -moz-linear-gradient(\a 30 \2502  \2502          90deg,\a 31 \2502  \2502          rgba(255, 255, 255, 1) 0%,\a 32 \2502  \2502          rgba(255, 255, 255, 1) 37%,\a 33 \2502  \2502          rgba(255, 255, 255, 0.92) 59%,\a 34 \2502  \2502          rgba(255, 255, 255, 0.5) 84%,\a 35 \2502  \2502          rgba(255, 255, 255, 0) 100%\a 36 \2502  \2502        );\a 37 \2502  \2502        background: -webkit-linear-gradient(\a 38 \2502  \2502          90deg,\a 39 \2502  \2502          rgba(255, 255, 255, 1) 0%,\a 40 \2502  \2502          rgba(255, 255, 255, 1) 37%,\a 41 \2502  \2502          rgba(255, 255, 255, 0.92) 59%,\a 42 \2502  \2502          rgba(255, 255, 255, 0.5) 84%,\a 43 \2502  \2502          rgba(255, 255, 255, 0) 100%\a 44 \2502  \2502        );\a 45 \2502  \2502        background: linear-gradient(\a 46 \2502  \2502          90deg,\a 47 \2502  \2502          rgba(255, 255, 255, 1) 0%,\a 48 \2502  \2502          rgba(255, 255, 255, 1) 37%,\a 49 \2502  \2502          rgba(255, 255, 255, 0.92) 59%,\a 50 \2502  \2502          rgba(255, 255, 255, 0.5) 84%,\a 51 \2502  \2502          rgba(255, 255, 255, 0) 100%\a 52 \2502  \2502        );\a 53 \2502  \2502        filter: progid:DXImageTransform.Microsoft.gradient(\a 54 \2502  \2502          startColorstr="#ffffff",\a 55 \2502  \2502          endColorstr="#ffffff",\a 56 \2502  \2502          GradientType=1\a 57 \2502  \2502        );\a 58 \2502  \2514      }\a    \2575 \a   src/styles/sass/App.scss 26:5  root stylesheet';
+}

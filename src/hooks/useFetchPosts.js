@@ -27,11 +27,10 @@ const useFetchPosts = (endpoint) => {
                     throw new Error("Network response was not ok");
                 }
                 const postsData = await response.json();
-                console.log(postsData)
 
                 const postsAndMedia = await Promise.all(
                     postsData.map(async (project) => {
-                        const mediaEndpoint = project._links?.["wp:attachment"]?.[0]?.href;
+                        const mediaEndpoint = project._links?.["wp:featuredmedia"]?.[0]?.href;
                         if (mediaEndpoint) {
                             try {
                                 const mediaResponse = await fetch(mediaEndpoint);
@@ -39,8 +38,9 @@ const useFetchPosts = (endpoint) => {
                                     throw new Error("Media response was not ok");
                                 }
                                 const mediaData = await mediaResponse.json();
-                                if (mediaData.length > 0) {
-                                    project.project_thumbnail = mediaData[0].media_details.sizes.medium.source_url;
+                                if (mediaData) {
+                                    project.project_thumbnail = mediaData.media_details.sizes.thumbnail.source_url;
+                                    console.log("thumb", project.project_thumbnail)
                                 }
                             } catch (mediaError) {
                                 console.error("Error fetching media:", mediaError);
@@ -50,9 +50,7 @@ const useFetchPosts = (endpoint) => {
                         return project;
                     })
                 );
-                console.log(posts)
                 setPosts(postsAndMedia);
-                console.log(posts)
             } catch (error) {
                 console.error("Fetch error", error);
                 setError(error);

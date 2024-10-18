@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
 
-const useFetchDetails = (slug) => {
+const useFetchDetails = (postId) => {
     const [ detail, setDetail ] = useState([]);
     const [ loading, setLoading ] = useState(true);
     const [ error, setError ] = useState(null);
 
     useEffect(() => {
         const fetchDetails = async () => {
-            const endpoint = process.env.REACT_APP_BASE_ENDPOINT;
-            console.log(slug)
-            if (!slug || !endpoint) {
+            const endpoint = process.env.REACT_APP_API_ENDPOINT;
+            if (!postId || !endpoint) {
                 const errorMessage = "404 Web not found";
                 console.error(errorMessage);
                 setError(new Error(errorMessage));
@@ -18,7 +17,7 @@ const useFetchDetails = (slug) => {
             }
 
             try {
-                const projectEndpoint =`${endpoint}/${slug.postName}`
+                const projectEndpoint =`${endpoint}/posts/${postId}`
                     const options = {
                     method: "GET",
                     headers: {
@@ -30,7 +29,8 @@ const useFetchDetails = (slug) => {
                     throw new Error("Network response was not ok");
                 }
                 const postsData = await response.json();
-                console.log(postsData)
+                setDetail(postsData)
+                setLoading(false);
 
                 
             } catch (error) {

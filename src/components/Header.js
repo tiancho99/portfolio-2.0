@@ -7,15 +7,19 @@ import MyNavbar from '../components/MyNavbar.js'
 import banner from '../assets/banner.jpg'
     
 const Header = () => {
+    const URL = process.env.REACT_APP_BASE_ENDPOINT;
     return(
-        <header>
-            <MyNavbar />
-            <Container fluid className="pe-0">
-                <Row className="banner component">
-                    <Col className="banner__text align-content-center component">
-                       <h2 className="open-sans-bold">Sebastian Hernandez<br/>Backend Developer</h2> 
-                            <p>Python enthusiast mastering artificial intelligence.</p>
-                        <Button variant="success">View projects</Button>
+        <header className="">
+            <Container fluid>
+                <Row className=" banner align-items-center">
+                    <Col className="banner__text">
+                        <h2 className="open-sans-bold">Sebastian Hernandez<br/>Backend Developer</h2> 
+                        <p>Python enthusiast mastering artificial intelligence.</p>
+                        <a
+                            href={`${URL}#projects`}
+                            className="btn btn-success"
+                            role="button"
+                        >View projects</a>
                     </Col>
                     <img className="banner__img" src={banner} alt="banner__image"/>
                 </Row>

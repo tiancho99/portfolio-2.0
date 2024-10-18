@@ -7,7 +7,7 @@ import LoadingCard from '../components/LoadingCard.js'
 import useFetchPosts from '../hooks/useFetchPosts.js'
 
 
-const Projects = ({ prefix, subtitle, title, categories}) => {
+const Projects = ({ prefix, subtitle, title, categories, setProjectDetail }) => {
     const projectsEndpoint = `${process.env.REACT_APP_API_ENDPOINT}/posts?categories=${categories}`;
     const { posts, loading, error } = useFetchPosts(projectsEndpoint);
     if (loading) {
@@ -43,9 +43,9 @@ const Projects = ({ prefix, subtitle, title, categories}) => {
                     <h6 className={`${prefix}__subtitle`}>{subtitle}</h6>
                     <h2 className={`${prefix}__title`}>{title}</h2>
                     <Row>
-                    {Object.values(posts || {}).map((project) => (
-                        <Col key={project.id} xs={12} md={6} lg={4} className="my-3">
-                            <ProjectCard project={project}/>
+                    {Object.values(posts || {}).map((post) => (
+                        <Col key={post.id} xs={12} md={6} lg={4} className="my-3">
+                            <ProjectCard post={post} />
                         </Col>
                     ))}        
                     </Row>
