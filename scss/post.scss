@@ -1,0 +1,65 @@
+// Define your custom responsive mixins
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: 575.98px) { @content; }
+  } @else if $breakpoint == sm {
+    @media (min-width: 576px) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: 768px) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: 992px) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: 1200px) { @content; }
+  } @else if $breakpoint == xxl {
+    @media (min-width: 1400px) { @content; }
+  }
+}
+
+
+%gray-bg {
+  background-color: #eef1ef;
+}
+
+.post {
+  padding: 1rem;
+  @include respond-to(md) {
+    padding: 1rem 15%;
+  }
+  .post__frontpage figure {
+    padding: 5rem;
+  }
+  .post__frontpage img {
+    border-radius: 1rem;
+    max-width: 100%;
+    max-height: 60vh;
+  }
+
+  // Post images
+  .wp-block-image {
+    align-items: center;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: table;
+    text-align: center;
+    clear: both;
+  
+    img {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+  }
+  .wp-block-code {
+    @extend %gray-bg;
+    color: #636363;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.6;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+    padding-left: 2rem
+  }
+}
+

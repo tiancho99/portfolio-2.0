@@ -1,0 +1,110 @@
+// Define your custom responsive mixins
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: 575.98px) { @content; }
+  } @else if $breakpoint == sm {
+    @media (min-width: 576px) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: 768px) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: 992px) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: 1200px) { @content; }
+  } @else if $breakpoint == xxl {
+    @media (min-width: 1400px) { @content; }
+  }
+}
+
+// Background and color placeholders
+%white-bg {
+  background-color: white;
+}
+
+%gray-bg {
+  background-color: #eef1ef;
+}
+
+%green-terminal-color {
+  color: green;
+}
+
+// Component padding
+.component {
+  padding: 10% 10%;
+}
+
+// Banner styles
+.banner {
+  .banner__text {
+    color: white;
+    position: absolute;
+    height: 60vh;
+    padding: 11%;
+    z-index: 2;
+  }
+  .banner__img {
+    filter: brightness(60%);
+    height: 60vh;
+    object-fit: cover;
+    object-position: 75% 50%;
+    padding: 0;
+    z-index: 1;
+    @include respond-to(sm){
+      object-position: 60% 50%;
+    }
+    @include respond-to(md){
+      display: block;
+      object-position: left;
+    }
+  }
+/*  .banner__overlay {
+    background-color: black;
+    display: inline;
+    padding: 0;
+    height: 60vh;
+    object-fit: cover;
+    object-position: right;
+    z-index: 1;
+    @include respond-to(md){
+      display: none;
+    }
+  }*/
+}
+
+// About Me section with color and background extensions
+.aboutme {
+  @extend %white-bg;
+
+  .aboutme__subtitle {
+    @extend %green-terminal-color;
+  }
+}
+
+// Projects section with gray background and green terminal color
+.projects {
+  @extend %gray-bg;
+
+  .projects__subtitle {
+    @extend %green-terminal-color;
+  }
+}
+
+// Blog section with white background and green terminal color
+.blog {
+  @extend %white-bg;
+
+  .blog__subtitle {
+    @extend %green-terminal-color;
+  }
+
+  .blog__thumbnail {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+// Footer with custom background and text color
+.footer {
+  background-color: #080a0b;
+  color: white;
+}
