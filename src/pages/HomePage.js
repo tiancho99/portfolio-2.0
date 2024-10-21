@@ -8,7 +8,6 @@ import Footer from "../components/Footer.js";
 
 import '../styles/App.css';
 
-
 function HomePage() {
   return (
       <div className="content">

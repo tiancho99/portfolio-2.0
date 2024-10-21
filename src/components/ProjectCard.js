@@ -14,10 +14,10 @@ const ProjectCard = ({ post }) => {
                 <Card.Text dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}>
                 </Card.Text>
                 <a
-                    href={`/post/${post.id}`}
+                    href={`/project/${post.id}`}
                     className="btn btn-primary"
                     role="button"
-                >Go to project</a>
+                >View project</a>
             </Card.Body>
         </Card>
     );

@@ -1,9 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button'
 
-import MyNavbar from '../components/MyNavbar.js'
 import banner from '../assets/banner.jpg'
     
 const Header = () => {
@@ -16,12 +14,14 @@ const Header = () => {
                         <h2 className="open-sans-bold">Sebastian Hernandez<br/>Backend Developer</h2> 
                         <p>Python enthusiast mastering artificial intelligence.</p>
                         <a
-                            href={`${URL}#projects`}
+                            href={`#projects`}
                             className="btn btn-success"
                             role="button"
                         >View projects</a>
                     </Col>
                     <img className="banner__img" src={banner} alt="banner__image"/>
+                    <div className="banner__overlay"></div>
+
                 </Row>
             </Container>
         </header>

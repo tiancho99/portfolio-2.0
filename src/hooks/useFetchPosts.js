@@ -33,14 +33,13 @@ const useFetchPosts = (endpoint) => {
                         const mediaEndpoint = project._links?.["wp:featuredmedia"]?.[0]?.href;
                         if (mediaEndpoint) {
                             try {
-                                const mediaResponse = await fetch(mediaEndpoint);
+                                const mediaResponse = await fetch(mediaEndpoint, options);
                                 if (!mediaResponse.ok) {
                                     throw new Error("Media response was not ok");
                                 }
                                 const mediaData = await mediaResponse.json();
                                 if (mediaData) {
                                     project.project_thumbnail = mediaData.media_details.sizes.thumbnail.source_url;
-                                    console.log("thumb", project.project_thumbnail)
                                 }
                             } catch (mediaError) {
                                 console.error("Error fetching media:", mediaError);
@@ -51,6 +50,7 @@ const useFetchPosts = (endpoint) => {
                     })
                 );
                 setPosts(postsAndMedia);
+                console.log(postsAndMedia)
             } catch (error) {
                 console.error("Fetch error", error);
                 setError(error);

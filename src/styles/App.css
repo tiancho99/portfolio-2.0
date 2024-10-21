@@ -1,0 +1,68 @@
+.blog, .aboutme {
+  background-color: white;
+}
+
+.projects {
+  background-color: #eef1ef;
+}
+
+.blog .blog__subtitle, .projects .projects__subtitle, .aboutme .aboutme__subtitle {
+  color: green;
+}
+
+.component {
+  padding: 10% 10%;
+}
+
+.banner {
+  /*  .banner__overlay {
+      background-color: black;
+      display: inline;
+      padding: 0;
+      height: 60vh;
+      object-fit: cover;
+      object-position: right;
+      z-index: 1;
+      @include respond-to(md){
+        display: none;
+      }
+    }*/
+}
+.banner .banner__text {
+  color: white;
+  position: absolute;
+  height: 60vh;
+  padding: 11%;
+  z-index: 2;
+}
+.banner .banner__img {
+  filter: brightness(60%);
+  height: 60vh;
+  object-fit: cover;
+  object-position: 75% 50%;
+  padding: 0;
+  z-index: 1;
+}
+@media (min-width: 576px) {
+  .banner .banner__img {
+    object-position: 60% 50%;
+  }
+}
+@media (min-width: 768px) {
+  .banner .banner__img {
+    display: block;
+    object-position: left;
+  }
+}
+
+.blog .blog__thumbnail {
+  object-fit: cover;
+  width: 100%;
+}
+
+.footer {
+  background-color: #080a0b;
+  color: white;
+}
+
+/*# sourceMappingURL=App.css.map */

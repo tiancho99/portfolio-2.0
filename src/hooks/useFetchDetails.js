@@ -29,7 +29,21 @@ const useFetchDetails = (postId) => {
                     throw new Error("Network response was not ok");
                 }
                 const postsData = await response.json();
-                setDetail(postsData)
+                    try{
+                        const mediaEndpoint = postsData._links["wp:featuredmedia"][0].href;
+                        const mediaResponse = await fetch(mediaEndpoint, options);
+                        console.log(mediaResponse.ok)
+                        if(!mediaResponse.ok) {
+                            throw new Error("Network response was not ok");
+                        }
+                        const media = await mediaResponse.json()
+                        postsData.mediaDetails = media.media_details;
+                    } catch (mediaError) {
+                        console.error("Error fetching media:", mediaError);
+                        postsData.frontpage=""; // Fallback if media fails
+                    }
+                setDetail(postsData);
+                console.log(postsData)
                 setLoading(false);
 
                 

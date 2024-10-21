@@ -1,6 +1,5 @@
 import Card from "react-bootstrap/Card";
 import Placeholder from 'react-bootstrap/Placeholder';
-import Button from 'react-bootstrap/Button';
 import 'holderjs'
 
 const LoadingCard = () => {
