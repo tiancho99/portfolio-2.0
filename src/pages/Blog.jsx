@@ -8,8 +8,8 @@ import useFetchPosts from '../hooks/useFetchPosts'
 
 
 const Projects = ({ prefix, subtitle, title, categories, setProjectDetail }) => {
-    const projectsEndpoint = `${import.meta.env.VITE_API_ENDPOINT}/posts?categories=${categories}`;
-    const { posts, loading, error } = useFetchPosts(projectsEndpoint);
+    const blogEndpoint = `${import.meta.env.VITE_API_ENDPOINT}/posts?categories=${categories}`;
+    const { posts, loading, error } = useFetchPosts(blogEndpoint);
     if (loading) {
         const cardPlaceholders = [];
         for (let i=0;i<3;i++) {

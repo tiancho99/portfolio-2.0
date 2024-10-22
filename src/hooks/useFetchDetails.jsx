@@ -7,7 +7,7 @@ const useFetchDetails = (postId) => {
 
     useEffect(() => {
         const fetchDetails = async () => {
-            const endpoint = process.env.REACT_APP_API_ENDPOINT;
+            const endpoint = import.meta.env.VITE_API_ENDPOINT;
             if (!postId || !endpoint) {
                 const errorMessage = "404 Web not found";
                 console.error(errorMessage);
@@ -48,7 +48,7 @@ const useFetchDetails = (postId) => {
 
                 
             } catch (error) {
-                setError("")
+                setError("Error 1")
             }
         };
         fetchDetails()

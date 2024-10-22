@@ -16,6 +16,7 @@ yarn-error.log
 .env.development.local
 .env.test.local
 .env.production.local
+docker-compose.yml
 
 # Ignore any lock files
 package-lock.json
@@ -29,3 +30,9 @@ yarn.lock
 # Ignore macOS and Linux system files
 .DS_Store
 *.log
+
+#Ignore unnecessary files
+.git
+.gitignore
+README.md
+scss/

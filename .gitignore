@@ -154,4 +154,4 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
->>>>>>> e8c584a7d7ca25bd654667e22ebc4f4f7ce8d84c
+docker-compose.yml
