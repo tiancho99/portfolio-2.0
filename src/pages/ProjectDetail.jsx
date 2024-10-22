@@ -1,6 +1,6 @@
 import Container from 'react-bootstrap/Container'
 import { useParams } from 'react-router-dom';
-import useFetchDetails from '../hooks/useFetchDetails.js'
+import useFetchDetails from '../hooks/useFetchDetails'
 
 import '../styles/post.css'
 

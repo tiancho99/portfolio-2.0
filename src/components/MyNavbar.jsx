@@ -11,7 +11,7 @@ const MyNavbar = () => {
         setCollapsed(!collapsed);
     }
 
-    const URL = process.env.REACT_APP_BASE_ENDPOINT
+    const URL = import.meta.env.VITE_BASE_ENDPOINT;
 
     return (
          <Navbar expand="lg" className="bg-body-tertiary" onToggle={handleToggle}>

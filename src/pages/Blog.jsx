@@ -2,13 +2,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container'
 
-import BlogCard from '../components/BlogCard.js'
-import LoadingCard from '../components/LoadingCard.js'
-import useFetchPosts from '../hooks/useFetchPosts.js'
+import BlogCard from '../components/BlogCard'
+import LoadingCard from '../components/LoadingCard'
+import useFetchPosts from '../hooks/useFetchPosts'
 
 
 const Projects = ({ prefix, subtitle, title, categories, setProjectDetail }) => {
-    const projectsEndpoint = `${process.env.REACT_APP_API_ENDPOINT}/posts?categories=${categories}`;
+    const projectsEndpoint = `${import.meta.env.VITE_API_ENDPOINT}/posts?categories=${categories}`;
     const { posts, loading, error } = useFetchPosts(projectsEndpoint);
     if (loading) {
         const cardPlaceholders = [];

@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col';
 import banner from '../assets/banner.jpg'
     
 const Header = () => {
-    const URL = process.env.REACT_APP_BASE_ENDPOINT;
+    const URL = import.meta.env.VITE_BASE_ENDPOINT;
     return(
         <header className="">
             <Container fluid>

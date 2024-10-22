@@ -1,11 +1,10 @@
+import { useEffect } from 'react';
 import Card from "react-bootstrap/Card";
 import Placeholder from 'react-bootstrap/Placeholder';
-import 'holderjs'
 
 const LoadingCard = () => {
     return (
         <Card className="border-0 rounded-0" style={{ width: '100%' }}>
-            <Card.Img className="rounded-0" variant="top" src="holder.js/100px180" />
             <Card.Body>
               <Placeholder as={Card.Title} animation="glow">
                 <Placeholder xs={6} />

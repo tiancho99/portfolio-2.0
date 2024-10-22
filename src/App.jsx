@@ -1,11 +1,10 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import MyNavbar from "./components/MyNavbar";
-import HomePage from "./pages/HomePage.js";
+import HomePage from "./pages/HomePage";
 import ProjectDetail from "./pages/ProjectDetail";
 
-
+import './styles/App.css'
 
 function App() {
     return (
