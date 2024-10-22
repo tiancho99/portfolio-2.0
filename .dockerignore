@@ -1,0 +1,31 @@
+# Ignore node_modules to avoid copying unnecessary files
+node_modules
+node_modules/**
+
+# Ignore build output since we build inside the container
+build
+build/**
+
+# Ignore npm-debug logs
+npm-debug.log
+yarn-error.log
+
+# Ignore environment variable files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore any lock files
+package-lock.json
+yarn.lock
+
+# Ignore IDE or editor folders and files
+.vscode
+.idea
+*.swp
+
+# Ignore macOS and Linux system files
+.DS_Store
+*.log
