@@ -39,7 +39,7 @@ const useFetchPosts = (endpoint) => {
                                 }
                                 const mediaData = await mediaResponse.json();
                                 if (mediaData) {
-                                    project.project_thumbnail = mediaData.media_details.sizes.thumbnail.source_url;
+                                    project.project_thumbnail = mediaData.description.rendered
                                 }
                             } catch (mediaError) {
                                 console.error("Error fetching media:", mediaError);

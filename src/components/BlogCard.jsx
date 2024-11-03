@@ -10,10 +10,7 @@ const BlogCard = ({ post }) => {
             <Container fluid className="align-items-center">
                 <Row className="p-5 justify-content-center">
                     <Col xs="11" md="5" className="d-flex align-items-center">
-                        <Card.Img
-                            className="blog__thumbnail rounded-0"
-                            src={post.project_thumbnail}
-                        />
+                    <div class="card-img-top" dangerouslySetInnerHTML={{__html: post.project_thumbnail}}></div>
                     </Col>
                     <Col xs="12" md="7" className="d-flex align-items-center">
                         <Card.Body>

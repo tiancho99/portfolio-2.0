@@ -59,6 +59,11 @@
   object-fit: cover;
   width: 100%;
 }
+.blog .attachment img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .footer {
   background-color: #080a0b;
