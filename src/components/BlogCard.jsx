@@ -17,7 +17,7 @@ const BlogCard = ({ post }) => {
                             <Card.Title>{post.title.rendered}</Card.Title>
                             <Card.Text dangerouslySetInnerHTML={{__html: post.excerpt.rendered}}/>
                             <a
-                                href={`/project/${post.id}`}
+                                href={`/blogpost/${post.id}`}
                                 className="btn btn-primary"
                                 role="button"
                             >Go to project</a>
