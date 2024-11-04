@@ -1,7 +1,7 @@
 # My Personal Portfolio
 This is the repository of my web page portfolio to showcase some of my projects and blog posts I've written. It is a Single Page Application (SPA) created using React, which consumes from a WordPress API.
 
-Check my (web)[HTTP://sebastiandev.com]
+Check my [web](HTTP://sebastiandev.com)
 
 To use this template, you can clone this repository:
 ```git clone https://github.com/tiancho99/portfolio-2.0.git```
