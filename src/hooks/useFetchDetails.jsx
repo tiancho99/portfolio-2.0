@@ -18,12 +18,13 @@ const useFetchDetails = (postId) => {
 
             try {
                 const projectEndpoint =`${endpoint}/posts/${postId}`
-                    const options = {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json"
-                    }
+                const options = {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                }
                 };
+                console.log(projectEndpoint);
                 const response = await fetch(projectEndpoint, options);
                 if (!response.ok) {
                     throw new Error("Network response was not ok");
